@@ -1,0 +1,35 @@
+version: '5'
+
+services:
+  farmbot:
+    image: farmbot
+    build: .
+    environment:
+      - NODE_ENV=development
+      - MONGODB_URL=mongodb://mongodb:27017/FarmBot
+    ports:
+      - 8000:8000
+      - 5173:5173
+    depends_on:
+      - mongodb
+    networks:
+      - node-network
+    
+  mongodb:
+    image: mongo
+    environment:
+      - MONGODB_INITDB_ROOT_USERNAME_FILE=user
+      - MONGODB_INITDB_ROOT_PASSWORD_FILE=pass
+    ports:
+      - '27017:27017'
+    volumes:
+      - dbdata:/data/db
+    networks:
+      - node-network
+
+volumes:
+  dbdata:
+
+networks:
+  node-network:
+    driver: bridge

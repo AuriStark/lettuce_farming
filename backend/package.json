@@ -1,0 +1,31 @@
+{
+  "name": "farmbot-backend",
+  "version": "1.0.0",
+  "description": "The backend of the FARMBOT project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "cors": "^2.8.5",
+    "cron": "^2.3.1",
+    "express": "^4.18.2",
+    "farmbot": "^15.6.1",
+    "mongoose": "^7.2.2",
+    "moo": "^0.5.2",
+    "mqtt": "^4.3.7",
+    "nanoid": "^3.3.6",
+    "nearley": "^2.20.1",
+    "node-datetime": "^2.1.2",
+    "nodemon": "^2.0.22",
+    "socket.io": "^4.6.2"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
